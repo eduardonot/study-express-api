@@ -7,10 +7,10 @@ const usersRoute = require('./../routes/users')
 
 module.exports = {
   start () {
-    app.use(express.json())
     db.connect()
+    app.use(express.json())
     app.listen(config.port, () => {
-      console.log(`App: localhost:${config.port}`)
+      console.log(`App: http://localhost:${config.port}`)
     })
 
     rootRoute(app)

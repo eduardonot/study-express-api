@@ -6,7 +6,10 @@ module.exports = {
   add (user) {
     return Users.create(user)
   },
-  search (user) {
+  findOne (user) {
     return Users.findOne({ name: user.name })
+  },
+  find (user) {
+    return Users.find({ name: { $regex: user.name, $options: 'i' } })
   }
 }
